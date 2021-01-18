@@ -11,7 +11,7 @@
 
 - Lattice Diamond
 - [riscv32-unknown-elf-gcc](https://pingu98.wordpress.com/2019/04/08/how-to-build-your-own-cpu-from-scratch-inside-an-fpga/)
-- SPI Nor Flash (1MB at least)
+- SPI Nor Flash (at least1MB, MX25Q32)
 
 ![](./doc/step_fpga.png)
 
@@ -47,10 +47,10 @@ Connect the SPI Nor Flash with Raspberry Pi:
 - FLASH  (DO) --> Pi (MOSI)
 ```
 
-On **Raspberry Pi**:
+On **Raspberry Pi** (only used to flash the firmware to MX25Q32):
 
 ```
-$ make upload
+$ sudo flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=2000 -l rom.layout -i bootloader -w bootloader.bin
 ```
 
 

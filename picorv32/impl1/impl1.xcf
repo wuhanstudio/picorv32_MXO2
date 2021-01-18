@@ -19,7 +19,7 @@
 				<BScanLen>1</BScanLen>
 				<BScanVal>0</BScanVal>
 			</Bypass>
-			<File>F:/picorv32_step_FPGA/picorv32/impl1/picorv32_impl1.jed</File>
+			<File>F:/picorv32_MXO2/picorv32/impl1/picorv32_impl1.jed</File>
 			<FileTime>01/18/21 17:32:59</FileTime>
 			<JedecChecksum>0xC548</JedecChecksum>
 			<Operation>FLASH Erase,Program,Verify</Operation>
