@@ -1,0 +1,12 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!picorv32.ldf
+!picorv32.lpf
+!impl1/
+!impl1/impl1.xcf
+!impl1/picorv32_impl1.jed
+!impl1/source
+!impl1/source/*.v
