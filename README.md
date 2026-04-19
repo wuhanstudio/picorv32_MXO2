@@ -51,6 +51,7 @@ On **Raspberry Pi** (only used to flash the firmware to MX25Q32):
 
 ```
 $ sudo flashrom -p linux_spi:dev=/dev/spidev0.0,spispeed=2000 -l rom.layout -i bootloader -w bootloader.bin
+$ sudo flashrom -p serprog:dev=/dev/ttyACM0:4000000 -l rom.layout -i bootloader -w bootloader.bin
 ```
 
 
