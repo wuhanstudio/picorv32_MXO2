@@ -661,6 +661,33 @@ void cmd_echo()
 		putchar(c);
 }
 
+void mnist_print_img(const uint8_t* buf)
+{
+    for(int y = 0; y < 28; y++)
+    {
+        for (int x = 0; x < 28; x++)
+        {
+            if(buf[y*28+x] > 75)
+	    {
+                print(" ");
+                print(" ");
+	    }
+	    else
+	    {
+                print("@");
+                print("@");
+	    }
+        }
+        print("\n");
+    }
+}
+
+#include "mnist.h"
+void mnist_demo()
+{
+	mnist_print_img(mnist_test_images[0]);
+}
+
 // --------------------------------------------------------
 
 void main()
@@ -673,7 +700,7 @@ void main()
 	set_flash_qspi_flag();
 
 	reg_leds = 127;
-	while (getchar_prompt("Press ENTER to continue..\n") != '\r') { /* wait */ }
+	while (getchar_prompt("Press ENTER to continue ...\n") != '\r') { /* wait */ }
 
 	print("\n");
 	print("  ____  _          ____         ____\n");
@@ -712,6 +739,7 @@ void main()
 		print("   [M] Run Memtest\n");
 		print("   [S] Print SPI state\n");
 		print("   [e] Echo UART\n");
+		print("   [T] LiME-TM example\n");
 		print("\n");
 
 		for (int rep = 10; rep > 0; rep--)
@@ -759,6 +787,9 @@ void main()
 				break;
 			case 'e':
 				cmd_echo();
+				break;
+			case 'T':
+				mnist_demo();
 				break;
 			default:
 				continue;
