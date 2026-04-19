@@ -11,6 +11,7 @@ upload: bootloader.bin
 
 firmware.bin: firmware.elf
 	$(CROSS)objcopy -O binary firmware.elf firmware.bin
+	$(CROSS)size firmware.elf
 
 picorv32_sections.lds: sections.lds
 	$(CROSS)cpp -P -DHX8KDEMO -o $@ $^
