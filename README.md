@@ -52,6 +52,8 @@ $ (vim) :%s/\r\(\n\)/\1/g
 $ mkdir build; cd build
 $ ../configure --with-arch=rv32i --prefix=/opt/riscv32i
 $ make -j$(nproc)
+
+$ export PATH=$PATH:/opt/riscv32i/bin/
 ```
 
 Compile the firmware using **riscv32-unknown-elf-gcc** on **PC**:
