@@ -42,6 +42,13 @@ $ sudo chown $USER /opt/riscv32i
 $ git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain-rv32i
 $ cd riscv-gnu-toolchain-rv32i
 
+# (optional) If you are using WSL
+$ sudo apt install dos2unix
+$ dos2unix ./configure
+$ vim ./configure
+$ (vim) :e ++ff=unix 
+$ (vim) :%s/\r\(\n\)/\1/g
+
 $ mkdir build; cd build
 $ ../configure --with-arch=rv32i --prefix=/opt/riscv32i
 $ make -j$(nproc)
