@@ -41,8 +41,6 @@ $ sudo chown $USER /opt/riscv32i
 
 $ git clone https://github.com/riscv/riscv-gnu-toolchain riscv-gnu-toolchain-rv32i
 $ cd riscv-gnu-toolchain-rv32i
-$ git checkout 411d134
-$ git submodule update --init --recursive
 
 $ mkdir build; cd build
 $ ../configure --with-arch=rv32i --prefix=/opt/riscv32i
